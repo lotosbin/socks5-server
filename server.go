@@ -12,10 +12,7 @@ func main() {
 	}
 	cator := socks5.UserPassAuthenticator{Credentials: creds}
 	// Create a SOCKS5 server
-	conf := &socks5.Config{
-		AuthMethods: []socks5.Authenticator{cator},
-		Logger:      log.New(os.Stdout, "", log.LstdFlags),
-	}
+	conf := &socks5.Config{}
 	server, err := socks5.New(conf)
 	if err != nil {
 		panic(err)
